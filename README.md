@@ -18,6 +18,19 @@ fParticleGun->SetParticleDefinition(particleTable->FindParticle(particleName="ga
 fParticleGun->SetParticleEnergy(511*keV);
 
 ```
+## Run action
+
+The beginning of the simulation is conducted here. The file invokes the histograms and plots which are to be analysed.
+
+## Sensitive Detector hits
+
+The hits on the sensitive detector are analysed on the BasicPETSD(Sensitive Detector abbreviation) file. Each event consists of more hits from the primary gammas and the secondary generated particles due to the photoelectric effect, Brehmstrahlung, annihilation event, etc. Each hit has the energy deposited and worked out from the following command line:
+
+```
+auto edep = step->GetTotalEnergyDeposit();
+
+```
+
 ## Event Action
 
 This file represents the methods implemented at the end of each event. Any event with deposited energy greater than 0.9 MeV is considered a good event (an event which helps in reconstructing the location of the positron - electron annihilation event). Each event consists of a collection of hits (G4HitsCollection), whose parameters can be accessed through BasicPetHit.cc and BasicPetHit.hh files. Warning: Do not change the AddEdep method of the hits collection. At the end of each event, the desired parameters are added into the histogram for event collection of the run
