@@ -11,7 +11,13 @@ A cyllinder has been simulated as a PET detector. The cyllinder has been chosen 
 
 ## Primary Generator Action
 
-This file is used for creating the outgoing beam which represents the radiation inside the human body from the positron-electron annihilation event. Two gamma rays of 511 keV are created. Moreover, this is the file where the two steps of the problem are implemented.
+This file is used for creating the outgoing beam which represents the radiation inside the human body from the positron-electron annihilation event. Two gamma rays of 511 keV are created. Moreover, this is the file where the two steps of the problem are implemented. The gammas' energies - as well as the fact that the user works with gamma rays - are declared using the following line:
+
+```
+fParticleGun->SetParticleDefinition(particleTable->FindParticle(particleName="gamma"));
+fParticleGun->SetParticleEnergy(100*TeV);
+
+```
 
 ## Event Action
 
