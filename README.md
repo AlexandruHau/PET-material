@@ -15,10 +15,9 @@ This file is used for creating the outgoing beam which represents the radiation 
 
 ```
 fParticleGun->SetParticleDefinition(particleTable->FindParticle(particleName="gamma"));
-fParticleGun->SetParticleEnergy(100*TeV);
+fParticleGun->SetParticleEnergy(511*keV);
 
 ```
-
 ## Event Action
 
 This file represents the methods implemented at the end of each event. Any event with deposited energy greater than 0.9 MeV is considered a good event (an event which helps in reconstructing the location of the positron - electron annihilation event). Each event consists of a collection of hits (G4HitsCollection), whose parameters can be accessed through BasicPetHit.cc and BasicPetHit.hh files. Warning: Do not change the AddEdep method of the hits collection. At the end of each event, the desired parameters are added into the histogram for event collection of the run
