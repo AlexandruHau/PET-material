@@ -9,6 +9,9 @@ This project is about comparing the sensitivity and signal-to-noise ratio of a P
 
 The following software needs to be instaled on the station (Linux is the most preferred choice):
 
+Markup: * **GEANT4 (GEometry ANd particle Tracking)** Software CERN Package for conducting the simulations. The installing instructions can be found [here]                   (https://geant4.web.cern.ch/support/getting_started)
+
+
 ## Geometry definition
 
 A cyllinder has been simulated as a PET detector. The cyllinder has been chosen at two lengths: 15 cm and 2 meters. A patient has also been placed inside. The patient can be commented out in the BasicDetector.cc file, by removing the lines of introducing the G4PhysicalVolume patient object into the physical world. The material from which the patient is made can also be changed. For the first step, the detector should be declared very thick (30 cm thickness is a good choice), and the patient should be commented out. For the second part, thickness should be smaller, in order to consider high-energy beams which escape the detector.
