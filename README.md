@@ -68,3 +68,10 @@ auto edep = step->GetTotalEnergyDeposit();
 ## Event Action
 
 This file represents the methods implemented at the end of each event. Any event with deposited energy greater than 0.9 MeV is considered a good event (an event which helps in reconstructing the location of the positron - electron annihilation event). Each event consists of a collection of hits (G4HitsCollection), whose parameters can be accessed through BasicPetHit.cc and BasicPetHit.hh files. Warning: Do not change the AddEdep method of the hits collection. At the end of each event, the desired parameters are added into the histogram for event collection of the run
+
+## Results
+
+The following results have been worked out:
+* The sensitivity of the PET-Scanner increases 30 times when the length is shifted from 15cm to 2m. Research papers from UC Davis, Harvard and other various institutes claim a 40-fold increase. However, the implemented geometry model has been simple and straightforward. Different materials need to be assigned to the human phantom, and more complex geometrical shapes need to be assigned
+* The SNR value is of 0.25 approximately, yielding a NECR number of roughly 0.33. These are, again, values in agreement with the current Nuclear PET-Medicine Research.
+* The impact of gamma ray non-collinearity on the spatial resolution of the scanner has been calculated and estimated to approximately 90cm. This represents a huge error, hence improvements need to be conducted in this topic. 
