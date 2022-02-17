@@ -10,7 +10,7 @@ This project is about comparing the sensitivity and signal-to-noise ratio of a P
 The following software needs to be instaled on the station (Linux is the most preferred choice):
 
 * **GEANT4 (GEometry ANd particle Tracking)** Software CERN Package for conducting the simulations. The platform is written in C++ and ran with the OPEN_GL Graphics Visualization Tool. The installing instructions can be found [here](https://geant4.web.cern.ch/support/getting_started).
-* **ROOT** Software CERN Package for Data Analysis, written in C
+* **ROOT** Software CERN Package for Data Analysis, written in C. ROOT instructions are found on  [this website](https://root.cern/install/).
 
 
 ## Geometry definition
@@ -26,6 +26,13 @@ fParticleGun->SetParticleDefinition(particleTable->FindParticle(particleName="ga
 fParticleGun->SetParticleEnergy(511*keV);
 
 ```
+**Note:** The two parts of the project are highly dependent on the code in BasicPrimaryGeneratorAction.cc file. For the first part, the beams are emitted on the same axis at 180 degrees angular deviation on the x-axis. For the second beam, an additional gaussian spread has been added through the following command line:
+
+```
+G4double gauss_value = twopi * G4RandGauss::shoot(0,0.25) / 360;
+G4ThreeVector photonAntiDir = G4ThreeVector(std::cos(gauss_value), std::sin(gauss_value) * std::cos(theta),
+  					        std::sin(gauss_value) * std::sin(theta));
+``` 
 ## Run action
 
 The beginning of the simulation is conducted here. The file invokes the histograms and plots which are to be analysed. Moreover, in the Run Action file, after terminal execution, the sensitivity of the scanner and the SNR value are printed out. 
