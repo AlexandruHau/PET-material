@@ -40,7 +40,7 @@ G4double x0  = 0*cm, y0  = 0*cm, z0  = 0*cm;
 fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
 
 ```
-For the **second** part of the project, the origin of the outcoming photons is randomly placed inside the human phantom at each step. This has been done through the implementation of cyllindrical polar coordinates, as highlighted below:
+For the **second** part of the project, the origin of the outcoming photons is randomly placed inside the human phantom at each step. The random implementation has been done to recreate as much as possible the process of radiotracer injection in the human body and its random trajectory evolution. Beam origin generation has been done through the implementation of cyllindrical polar coordinates, as highlighted below:
 
 ```
 G4double r = PET_radius * G4UniformRand();
@@ -49,6 +49,8 @@ G4double alpha = alpha_max * G4UniformRand();
 
 G4ThreeVector radiationOrigin = G4ThreeVector(r * std::cos(alpha), r * std::sin(alpha), z);
 ```
+For the random origin generator, the efficiency of the PET Scanner has been calculated at the lengths of 15cm and 2m which can be varied in the BasicDetectorConstructon.cc file.
+
 ## Run action
 
 The beginning of the simulation is conducted here. The file invokes the histograms and plots which are to be analysed. Moreover, in the Run Action file, after terminal execution, the sensitivity of the scanner and the SNR value are printed out. 
