@@ -9,8 +9,8 @@ This project is about comparing the sensitivity and signal-to-noise ratio of a P
 
 The following software needs to be instaled on the station (Linux is the most preferred choice):
 
-Markup: * **GEANT4 (GEometry ANd particle Tracking)** Software CERN Package for conducting the simulations. The platform is written in C++ and ran with the OPEN_GL Graphics Visualization Tool. The installing instructions can be found [here](https://geant4.web.cern.ch/support/getting_started).
-        * **ROOT** Software CERN Package for Data Analysis, written in C
+* **GEANT4 (GEometry ANd particle Tracking)** Software CERN Package for conducting the simulations. The platform is written in C++ and ran with the OPEN_GL Graphics Visualization Tool. The installing instructions can be found [here](https://geant4.web.cern.ch/support/getting_started).
+* **ROOT** Software CERN Package for Data Analysis, written in C
 
 
 ## Geometry definition
